@@ -4,4 +4,13 @@
 
 > with VueMarkdown \ mavonEditor \ ElementUI \Vuex 
 
+# display
+>Home
 
+![Image text](https://github.com/Makoq/imgs/raw/master/bloggate.PNG)
+
+>Markdown
+
+![Image text](https://github.com/Makoq/imgs/raw/master/blog2.PNG)
+
+      
