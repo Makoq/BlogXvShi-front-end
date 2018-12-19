@@ -1,18 +1,16 @@
 # myblog
 
-> A Vue.js project
+> A simple project developed by Vue.js, which is a blog website.   
 
-## Build Setup
+> with VueMarkdown \ mavonEditor \ ElementUI \Vuex 
 
-``` bash
-# install dependencies
-npm install
+# display
+>Home
 
-# serve with hot reload at localhost:8080
-npm run dev
+![Image text](https://github.com/Makoq/imgs/raw/master/bloggate.PNG)
 
-# build for production with minification
-npm run build
-```
+>Markdown
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+![Image text](https://github.com/Makoq/imgs/raw/master/blog2.PNG)
+
+      
