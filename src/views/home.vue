@@ -17,7 +17,7 @@
             >
               <el-menu-item index="/welcome">Welcome</el-menu-item>
               <el-menu-item index="/home">home</el-menu-item>
-              <el-menu-item index="/album">album</el-menu-item>
+              <el-menu-item index="/album">video</el-menu-item>
               <el-menu-item index="/editmarkdown">editmarkdown</el-menu-item>
             </el-menu>
           </el-col>
@@ -32,12 +32,7 @@
                       :data="tableData"
                       class="asidetable"
                       >
-                            <el-table-column
-                            prop="latest"
-                            label="最近的博客"
-                            style="width:200px"
-                           
-                            >
+                            <el-table-column prop="latest" label="最近的博客" style="width:200px">
                              
                             </el-table-column>
 
@@ -47,9 +42,10 @@
                             
                             >
                             <template slot-scope="scope">
-                                <el-button
+                                <el-button @click=" te()" icon="el-icon-search" circle></el-button>
+                                <!-- <el-button
                                 size="mini"
-                                @click=" te()">go</el-button>
+                                @click=" te()">go</el-button> -->
                                  
                             </template>
                             </el-table-column>
@@ -73,24 +69,12 @@
 <script>
 import VueMarkdown from 'vue-markdown'
 import store from '../vuex/store.js'
+ 
 export default {
   data() {
     return {
          
-        tableData:[
-            {
-                latest:'十二新作'
-            },
-             {
-                latest:'雪地里的糖'
-            },
-             {
-                latest:'深夜作品'
-            },
-             {
-                latest:'十二新作'
-            },
-        ],
+        tableData:[  ],
         value:''
 
     };
@@ -101,12 +85,47 @@ export default {
     },
     methods:{
         te(){
-            alert("hello")
-        }
+            
+        },
+        
+         
     },
     mounted:function(){
-        console.log(this.$store.state.blogData)
-        this.value=this.$store.state.blogData;
+        this.$axios.get("http://localhost:8081/find")
+            .then(response=>{
+             if(response.status==200){
+              return response.data
+             }else{
+                 console.log("error")
+             }
+                 
+            }).then(response=>{
+                // this.value=response[0].blog;
+                //   response.forEach(({blog}) => {
+                //       this.value=blog;
+                //   });
+
+
+
+                // console.log(response)
+                this.value=response[0].blog;
+
+                response.forEach((data) => {
+                    //  this.tableData.push( 'latest')
+                    //   this.tableData.push(':')
+                        var obj={'latest':data.theme,'blogcontent':data.blog}
+                        
+                        this.tableData.push(obj)
+                        
+
+                });
+                console.log(this.tableData)
+                console.log(response)
+            })
+          
+        
+        // console.log(this.$store.state.blogData)
+        // this.value=this.$store.state.blogData;
     }
 };
 </script>
@@ -114,10 +133,14 @@ export default {
 <style lang="scss">
 .homeaside{
     height: 600px;
+     background: url(../assets/img/asidetag.jpg) no-repeat;
+    background-size: cover;
+
 }
 .homemain{
     height: 900px;
-   
+   background: url(../assets/img/homebk.jpg) no-repeat;
+    background-size: cover;
     background-color: #edf4ed;
 }
 .asidetable{

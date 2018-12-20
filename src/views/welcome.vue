@@ -12,7 +12,9 @@
 
          </el-col> -->
          <el-col :span="24">
-            <el-card class="introducecard">
+           
+            <el-card class="introducecard" >
+              <marquee direction="up" onmouseover="this.stop()" onmouseout="this.start()">
                 <h1>旭氏美术馆</h1>  
                 <p>旭氏美术馆源于我的一个突发奇想，那是在考研之后的一段日子里，每每经历大考之后，从繁忙而且苦逼的日子里突然闲下来，心里莫名会很难受，突然不知道要做些什么
                   但心态还有当时备考考研状态的惯性，不知道要做什么，却又想要做些什么，于是，我捡起了多年前的一个小兴趣--画画。
@@ -31,8 +33,9 @@
                 </p>
                  <p>最后，愿我们一切都好。
                 </p>
-
+              </marquee>
             </el-card>
+           
          </el-col>
 
        </el-row>
@@ -62,6 +65,8 @@ export default {
 .homecard{
   height: 600px;
   background-color: #f0f3f5;
+  background: url(../assets/img/welcomebk.jpg) no-repeat;
+    background-size: cover;
 }
 .headpic{
   height: 200px;
@@ -71,8 +76,17 @@ export default {
 .introducecard{
   height: 500px;
   width: 98%;
-    background-color:#edf4ed;
-  color: black;
+    /* background-color:#edf4ed; */
+ 
+     
+  color: rgb(8, 107, 173);
+  font-size: 18px;
+  font-weight: 40px;
+  opacity: .7;
+}
+.introducecard:hover{
+   
+  color: rgb(255, 0, 0);
 }
 .introducecard p{
 

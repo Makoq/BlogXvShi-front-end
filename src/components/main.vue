@@ -17,7 +17,7 @@
             >
               <el-menu-item index="/welcome">Welcome</el-menu-item>
               <el-menu-item index="/home">home</el-menu-item>
-              <el-menu-item index="/album">album</el-menu-item>
+              <el-menu-item index="/album">video</el-menu-item>
               <el-menu-item index="/editmarkdown">editmarkdown</el-menu-item>
             </el-menu>
           </el-col>
@@ -110,7 +110,7 @@ export default {
   }
 };
 </script>
-<style  >
+<style   >
 body {
   width: 100%;
   margin: 0px;
@@ -130,10 +130,11 @@ body {
   box-shadow: #191b1d 50px;
 }
 .el-main {
-  background: -webkit-linear-gradient(left, #1c5da0, #c3e0ff);
+  /* background: -webkit-linear-gradient(left, #1c5da0, #c3e0ff);
   background: -o-linear-gradient(right, #1c5da0, #c3e0ff);
   background: -moz-linear-gradient(right,#1c5da0, #c3e0ff);
-  background: linear-gradient(to right, #1c5da0, #c3e0ff);
+  background: linear-gradient(to right, #1c5da0, #c3e0ff); */
+  background-color: #000;
 }
 .topsection {
   height: 420px;

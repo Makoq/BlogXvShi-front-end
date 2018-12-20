@@ -18,11 +18,7 @@ export default  new Router({
                     component: (resolve) => {require(['../views/welcome'], resolve)},
                     name: 'welcome'
                 },
-                {
-                    path: '/album',
-                    component: (resolve) => {require(['../views/album'], resolve)},
-                    name: 'album'
-                },
+                
                 
             ]
         },
@@ -39,6 +35,11 @@ export default  new Router({
             name: 'home'
 
 
+        },
+        {
+            path: '/album',
+            component: (resolve) => {require(['../views/album'], resolve)},
+            name: 'album'
         },
 
 

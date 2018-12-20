@@ -30,7 +30,7 @@
     <el-card >
         <el-row>
           <el-col :span="23">
-              <el-input v-model="inp" placeholder="请输入标题"></el-input>
+              <el-input v-model="blogtheme" placeholder="请输入标题"></el-input>
           </el-col>
           <el-col :span="1">
                <el-button @click="submit()" style="height:60px;background-color:litered">submit</el-button>
@@ -43,7 +43,7 @@
 
     <el-card class="editorcard" >
          <div  >
-               <mavon-editor  v-model="value"></mavon-editor>
+               <mavon-editor  v-model="blogcontent"></mavon-editor>
         </div>
     </el-card>
      
@@ -59,17 +59,30 @@ export default {
     data(){
             return{
                      
-                     value:'sdsds',
-                     blogname:'',
-                     inp:''
+                     blogcontent:'',
+                     blogtheme:'',
+                      
                 }
                
     }, 
     store,
     methods:{
       submit(){
-        this.$router.push({path:'/home'})
-        this.$store.commit('updatablogdata',this.value)
+        let data={theme:this.blogtheme,blog:this. blogcontent}
+        console.log(data)
+        this.$axios.post("http://localhost:8081/save",data)
+        .then(res=>{
+          console.log("res=>",res)
+
+            if(res.status==200){
+            this.$message('博客发布成功');
+            this.$router.push({path:'/home'})
+          }
+        })
+        
+
+        
+        // this.$store.commit('updatablogdata',this.value)
       }
 
     }
