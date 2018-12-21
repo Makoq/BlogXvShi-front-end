@@ -30,33 +30,43 @@
                   <el-card class="homeaside">
                       <el-table
                       :data="tableData"
+
                       class="asidetable"
+
+                      @cell-click="al"
+
                       >
-                            <el-table-column prop="latest" label="最近的博客" style="width:200px">
-                             
+                            <el-table-column prop="latest" label="最近的博客" style="width:80%"  >
+                              
                             </el-table-column>
 
-                            <el-table-column
+                            <!-- <el-table-column
                             prop="opera"
                             label=""
                             
                             >
                             <template slot-scope="scope">
                                 <el-button @click=" te()" icon="el-icon-search" circle></el-button>
-                                <!-- <el-button
-                                size="mini"
-                                @click=" te()">go</el-button> -->
+                               
+                                
+                               
                                  
                             </template>
-                            </el-table-column>
+                            </el-table-column> -->
 
                       </el-table>
                   </el-card>
               </el-col>
               <el-col :span="20">
-                  <el-card class="homemain">
-                       <vue-markdown :source="value"></vue-markdown>
-                  </el-card>
+
+                  <!-- <el-card class="homemain"> -->
+                      <!-- :defaultOpen="preview" -->
+                      <!-- ishljs代码高亮  -->
+                      <!-- :editable="false"  -->
+                       <mavon-editor  defaultOpen="preview"  :editable="false"  class="mkdeditor" :value="value"    :toolbarsFlag="false" :subfield="false"></mavon-editor>
+
+                       <!-- <vue-markdown :source="value"></vue-markdown> -->
+                  <!-- </el-card> -->
               </el-col>
           </el-row>
 
@@ -87,7 +97,14 @@ export default {
         te(){
             
         },
+        al(row, column, cell, event){
         
+           console.log(row)
+            //点击单元格，并将列表中的
+           this.value=row.blogcontent;
+        
+        }
+         
          
     },
     mounted:function(){
@@ -120,7 +137,7 @@ export default {
 
                 });
                 console.log(this.tableData)
-                console.log(response)
+                 
             })
           
         
@@ -133,17 +150,21 @@ export default {
 <style lang="scss">
 .homeaside{
     height: 600px;
-     background: url(../assets/img/asidetag.jpg) no-repeat;
-    background-size: cover;
+    //  s
 
 }
 .homemain{
     height: 900px;
-   background: url(../assets/img/homebk.jpg) no-repeat;
-    background-size: cover;
+//    background: url(../assets/img/homebk.jpg) no-repeat;
+//     background-size: cover;
     background-color: #edf4ed;
 }
 .asidetable{
     width: 100%;
 }
+  
+.v-note-wrapper.markdown-body.mkdeditor {
+    height: 830px;
+}
+
 </style>

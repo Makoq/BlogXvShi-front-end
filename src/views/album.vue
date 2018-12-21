@@ -78,15 +78,7 @@
                         <span >one of my Vlog.</span>
                       </el-card>
                     </el-row>
-
-
-
-
-
-
-
-
-                    
+               
                   </el-card>
           </section>
 

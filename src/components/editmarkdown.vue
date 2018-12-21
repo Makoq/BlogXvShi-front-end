@@ -43,7 +43,8 @@
 
     <el-card class="editorcard" >
          <div  >
-               <mavon-editor  v-model="blogcontent"></mavon-editor>
+               <mavon-editor :ishljs = "true" v-model="blogcontent"></mavon-editor>
+                <!-- <vue-markdown v-html="blogcontent"></vue-markdown> -->
         </div>
     </el-card>
      
@@ -68,9 +69,22 @@ export default {
     store,
     methods:{
       submit(){
-        let data={theme:this.blogtheme,blog:this. blogcontent}
+        
+       // let data={theme:this.blogtheme,blog:this. blogcontent}
+
+        let data=new FormData()
+        data.append("theme",this.blogtheme)
+        data.append("blog",this.blogcontent)
+
+
+        let config={
+           headers: {
+                      'Content-Type': 'multipart/form-data'
+           }
+        }
+
         console.log(data)
-        this.$axios.post("http://localhost:8081/save",data)
+        this.$axios.post("http://localhost:8081/save",data,config)
         .then(res=>{
           console.log("res=>",res)
 
