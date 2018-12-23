@@ -41,6 +41,16 @@ export default  new Router({
             component: (resolve) => {require(['../views/album'], resolve)},
             name: 'album'
         },
+        {
+            path: '/log',
+            component: (resolve) => {require(['../views/log'], resolve)},
+            name: 'log'
+        },
+        {
+            path: '/registe',
+            component: (resolve) => {require(['../views/registe'], resolve)},
+            name: 'registe'
+        },
 
 
         {

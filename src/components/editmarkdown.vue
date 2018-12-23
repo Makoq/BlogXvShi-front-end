@@ -4,23 +4,22 @@
 
  
         <el-row>
-          <el-col :span="2">
-           <img src="../assets/img/logotitle.png" style="margin:10px"> 
-          </el-col>
-          <el-col :span="22">
+         <!-- <el-col :span="2">
+            <img src="../assets/img/logotitle.png" style="width:100%"> 
+          </el-col> -->
+          <el-col :span="24">
             <el-menu
-              
+              :default-active="activeIndex"
               class="el-menu-demo"
               mode="horizontal"
               text-color="white"
               active-text-color="#4ebee3"
               router
-            >
-              <el-menu-item index="/welcome">Welcome</el-menu-item>
-              <el-menu-item index="/album">album</el-menu-item>
-              <el-menu-item index="/home">home</el-menu-item>
-              <el-menu-item index="/editmarkdown">editmarkdown</el-menu-item>
-              <!-- <el-menu-item @click="submit(value)">finishedit</el-menu-item> -->
+            ><el-menu-item index="/welcome" ><label>旭氏美术馆</label> </el-menu-item>
+              <el-menu-item index="/welcome"><label>Welcome</label></el-menu-item>
+              <el-menu-item index="/home"><label>Home</label></el-menu-item>
+              <el-menu-item index="/album"><label>Video</label></el-menu-item>
+              <el-menu-item index="/editmarkdown"><label>Editblog</label></el-menu-item>
             </el-menu>
           </el-col>
         </el-row>
@@ -70,16 +69,16 @@ export default {
     methods:{
       submit(){
         
-       // let data={theme:this.blogtheme,blog:this. blogcontent}
+       let data={theme:this.blogtheme,blog:this. blogcontent}
 
-        let data=new FormData()
-        data.append("theme",this.blogtheme)
-        data.append("blog",this.blogcontent)
+        // let data=new FormData()
+        // data.append("theme",this.blogtheme)
+        // data.append("blog",this.blogcontent)
 
 
         let config={
            headers: {
-                      'Content-Type': 'multipart/form-data'
+                      'Content-Type': 'application/json'
            }
         }
 

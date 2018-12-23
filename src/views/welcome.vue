@@ -9,10 +9,8 @@
            <el-card class="headpic">
               <img src="../assets/img/headpic.jpg" style="height:100%;width:100%;border-radius:40px">
            </el-card>
-
          </el-col> -->
          <el-col :span="24">
-           
             <el-card class="introducecard" >
               <marquee direction="up" onmouseover="this.stop()" onmouseout="this.start()">
                 <h1>旭氏美术馆</h1>  
@@ -35,18 +33,11 @@
                 </p>
               </marquee>
             </el-card>
-           
          </el-col>
-
        </el-row>
-
        <el-row>
-         
        </el-row>
-
    </el-card>
- 
-
   </div>
 </template>
 <script>
@@ -54,11 +45,8 @@ export default {
     data(){
       return{
         value:'21212'
-
       }
-
     }
-  
 };
 </script>
 <style>
@@ -71,26 +59,20 @@ export default {
 .headpic{
   height: 200px;
   width: 80%;
-
 }
 .introducecard{
   height: 500px;
   width: 98%;
     /* background-color:#edf4ed; */
- 
-     
   color: rgb(8, 107, 173);
   font-size: 18px;
   font-weight: 40px;
   opacity: .7;
 }
 .introducecard:hover{
-   
   color: rgb(255, 0, 0);
 }
 .introducecard p{
-
   font-family:"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei";
 }
- 
 </style>

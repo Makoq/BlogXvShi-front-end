@@ -3,36 +3,32 @@
      <el-container class="container">
       <el-header>
         <el-row>
-          <el-col :span="2">
-            <img src="../assets/img/logotitle.png" style="margin:10px">
-          </el-col>
-          <el-col :span="22">
+          <!-- <el-col :span="2">
+            <img src="../assets/img/logotitle.png" style="width:100%"> 
+          </el-col> -->
+          <el-col :span="24">
             <el-menu
-               
+              :default-active="activeIndex"
               class="el-menu-demo"
               mode="horizontal"
               text-color="white"
               active-text-color="#4ebee3"
               router
-            >
-              <el-menu-item index="/welcome">Welcome</el-menu-item>
-              <el-menu-item index="/home">home</el-menu-item>
-              <el-menu-item index="/album">video</el-menu-item>
-              <el-menu-item index="/editmarkdown">editmarkdown</el-menu-item>
+            ><el-menu-item index="/welcome" ><label>旭氏美术馆</label> </el-menu-item>
+              <el-menu-item index="/welcome"><label>Welcome</label></el-menu-item>
+              <el-menu-item index="/home"><label>Home</label></el-menu-item>
+              <el-menu-item index="/album"><label>Video</label></el-menu-item>
+              <el-menu-item index="/editmarkdown"><label>Editblog</label></el-menu-item>
             </el-menu>
           </el-col>
         </el-row>
       </el-header>
-
       <el-main>
           <section style="width:100%">
-
-                  
                   <el-card class="vidoemain">
                     <!-- <video src="../assets/video/movieclip.mp4" controls="controls"></video> -->
                     <el-row>
                       <el-col :span="7">&nbsp;</el-col>
-                      
                       <el-col :span="10">
                         <el-card class="videocard">
                           <video-player  class="video-player vjs-custom-skin"
@@ -42,22 +38,17 @@
                         ></video-player>
                         </el-card>
                       </el-col>
-
                       <el-col :span="7">
                         &nbsp;
                       </el-col>
                     </el-row>
-                    
                     <el-row>
                       <el-card class="videotag">
                         <span >one of my movie clip works.</span>
                       </el-card>
                     </el-row>
-
-
                     <el-row>
                       <el-col :span="7">&nbsp;</el-col>
-                      
                       <el-col :span="10">
                         <el-card class="videocard">
                           <video-player  class="video-player vjs-custom-skin"
@@ -67,28 +58,19 @@
                         ></video-player>
                         </el-card>
                       </el-col>
-
                       <el-col :span="7">
                         &nbsp;
                       </el-col>
                     </el-row>
-                    
                     <el-row>
                       <el-card class="videotag">
                         <span >one of my Vlog.</span>
                       </el-card>
                     </el-row>
-               
                   </el-card>
           </section>
-
       </el-main>
     </el-container>
-    
-
-    
- 
-
   </div>
 </template>
 <script>
@@ -109,7 +91,6 @@ export default {
           type: "video/mp4",
           src: "//f.us.sinaimg.cn/003Pl5vblx07neVOTXTO01040201yBub0k020.mp4?label=mp4_720p&template=1280x720.28&Expires=1545316659&ssig=iORW%2FKwK6s&KID=unistore,video" //url地址
         },
-         
         ],
          poster: "src//assets//img//video01.png", //你的封面地址
         width: document.documentElement.clientWidth,
@@ -135,7 +116,6 @@ export default {
           type: "video/mp4",
           src: "//f.us.sinaimg.cn/002Vrmkwlx07ozMyk52801040200j4Kn0k010.mp4?label=mp4_hd&template=864x480.28&Expires=1545320763&ssig=Xr944ij3ke&KID=unistore,video" //url地址
         },
-        
         ],
          poster: "src//assets//img//video02.png", //你的封面地址
         width: document.documentElement.clientWidth,
@@ -147,34 +127,30 @@ export default {
           fullscreenToggle: true  //全屏按钮
         }
     }
-
- 
                 }
     },components: {
           videoPlayer
     }
-  
 };
 </script>
 <style  lang="scss"  scoped>
 .el-main{
-  
 }
 .vidoemain{
    height: 100%;
-   background-color: black;
+  //  background-color: black;
+   background: url(../assets/img/headerbk.jpg) no-repeat;
+ background-size: cover;
  }
  .videocard{
    height: 470px;
    width: 800px;
    padding: 0px;
    background-color: black;
-
  }
   .videotag{
     text-align:center;
     background-color:black;
     color:white;
   }
-
 </style>
