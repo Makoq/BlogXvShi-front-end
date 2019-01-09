@@ -5,6 +5,7 @@ Vue.use(Router)
 
 
 export default  new Router({
+    // mode:"history",
 
     routes:[
         {
@@ -16,7 +17,7 @@ export default  new Router({
                 {
                     path: '/welcome',
                     component: (resolve) => {require(['../views/welcome'], resolve)},
-                    name: 'welcome'
+                    
                 },
                 
                 
@@ -44,15 +45,57 @@ export default  new Router({
         {
             path: '/log',
             component: (resolve) => {require(['../views/log'], resolve)},
-            name: 'log'
+            name: 'log',
+            children:[
+                {
+                    path: '/welcome',
+                    component: (resolve) => {require(['../views/welcome'], resolve)},
+                    name: 'welcome'
+                },
+                
+                
+            ]
         },
         {
             path: '/registe',
             component: (resolve) => {require(['../views/registe'], resolve)},
             name: 'registe'
         },
+        {
+            path: '/map',
+            component: (resolve) => {require(['../views/map'], resolve)},
+            name: 'map'
+        },
+        {
+            path: '/myschool',
+            component: (resolve) => {require(['../components/common/baidumap'], resolve)},
+            name: 'BJFU'
+        },
 
 
+
+
+
+
+
+
+
+
+
+        {
+            path: '/test',
+            component: (resolve) => {require(['../views/test'], resolve)},
+            name: 'test',
+            children:[
+                {
+                    path: '/testchild',
+                    component: (resolve) => {require(['../views/testchild'], resolve)},
+                    name: 'testchild'
+                },
+                
+                
+            ]
+        },
         {
             path:'/*',
             component: (resolve) => {require(['../views/errorpage/404page'], resolve)},
@@ -60,6 +103,7 @@ export default  new Router({
 
         }
         ,
+        
 
     ]
 

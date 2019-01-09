@@ -37,6 +37,7 @@
              </el-col>
                 <el-col :span="9"><div style="100%">&nbsp;</div></el-col>
          </el-row>
+          
      </el-container>
   </div>
 </template>
@@ -49,7 +50,12 @@ export default {
             password:''
         }
       }
+    },
+    mounted(){
+        console.log("123");
+        
     }
+
 };
 </script>
 <style>

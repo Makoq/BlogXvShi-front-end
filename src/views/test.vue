@@ -1,25 +1,22 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+     123
+     <router-view/>
   </div>
 </template>
 <script>
 export default {
-  name: 'app',
+ 
   data () {
     return {
     }
+    
+  },
+  mounted(){
+      this.$router.push("/testchild")
   }
 }
 </script>
 <style lang="scss">
-body{
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-#app{
-height: 100%;
-min-height: 100%;
-}
+ 
 </style>

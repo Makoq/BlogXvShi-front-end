@@ -2,12 +2,20 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    app:'./src/main.js',
+    
+  },
+  externals:{
+    "BMap":"BMap",
+    "BMap_Symbol_SHAPE_POINT":"BMap_Symbol_SHAPE_POINT"
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  
   module: {
     rules: [
       {
@@ -74,10 +82,14 @@ module.exports = {
     ]
   },
   resolve: {
+     extensions: ['*', '.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+     
+      'vue$': 'vue/dist/vue.esm.js',
+       '@': path.resolve('src'),
+        
     },
-    extensions: ['*', '.js', '.vue', '.json']
+   
   },
   devServer: {
     historyApiFallback: true,

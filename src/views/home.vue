@@ -1,28 +1,12 @@
 <template>
   <div>
     <el-container>
-      <el-header>
-        <el-row>
-          <!-- <el-col :span="2">
-            <img src="../assets/img/logotitle.png" style="width:100%"> 
-          </el-col> -->
-          <el-col :span="24">
-            <el-menu
-              :default-active="activeIndex"
-              class="el-menu-demo"
-              mode="horizontal"
-              text-color="white"
-              active-text-color="#4ebee3"
-              router
-            ><el-menu-item index="/welcome" ><label>旭氏美术馆</label> </el-menu-item>
-              <el-menu-item index="/welcome"><label>Welcome</label></el-menu-item>
-              <el-menu-item index="/home"><label>Home</label></el-menu-item>
-              <el-menu-item index="/album"><label>Video</label></el-menu-item>
-              <el-menu-item index="/editmarkdown"><label>Editblog</label></el-menu-item>
-            </el-menu>
-          </el-col>
-        </el-row>
-      </el-header>
+        
+       <el-header>
+           <my-header/>
+       </el-header>
+
+
       <el-main>
           <el-row>
               <el-col :span="4">
@@ -67,8 +51,9 @@
   </div>
 </template>
 <script>
-import VueMarkdown from 'vue-markdown'
-import store from '../vuex/store.js'
+import VueMarkdown from 'vue-markdown';
+import store from '../vuex/store.js';
+import myHeader from '@/components/common/header';
 export default {
   data() {
     return {
@@ -114,10 +99,14 @@ export default {
             })
         // console.log(this.$store.state.blogData)
         // this.value=this.$store.state.blogData;
+    },
+    components:{
+        myHeader
     }
 };
 </script>
 <style lang="scss">
+ 
 .homeaside{
     height: 600px;
     //  s

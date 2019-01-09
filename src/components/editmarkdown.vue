@@ -3,28 +3,11 @@
 
 
  
-        <el-row>
-         <!-- <el-col :span="2">
-            <img src="../assets/img/logotitle.png" style="width:100%"> 
-          </el-col> -->
-          <el-col :span="24">
-            <el-menu
-              :default-active="activeIndex"
-              class="el-menu-demo"
-              mode="horizontal"
-              text-color="white"
-              active-text-color="#4ebee3"
-              router
-            ><el-menu-item index="/welcome" ><label>旭氏美术馆</label> </el-menu-item>
-              <el-menu-item index="/welcome"><label>Welcome</label></el-menu-item>
-              <el-menu-item index="/home"><label>Home</label></el-menu-item>
-              <el-menu-item index="/album"><label>Video</label></el-menu-item>
-              <el-menu-item index="/editmarkdown"><label>Editblog</label></el-menu-item>
-            </el-menu>
-          </el-col>
-        </el-row>
+        
  
-
+    <el-header>
+      <my-header/>
+    </el-header>
 
     <el-card >
         <el-row>
@@ -55,6 +38,7 @@
 </template>
 <script>
 import store from '../vuex/store.js';
+  import myHeader from '@/components/common/header';
 export default {
     data(){
             return{
@@ -98,6 +82,8 @@ export default {
         // this.$store.commit('updatablogdata',this.value)
       }
 
+    },components:{
+      myHeader
     }
   
 };

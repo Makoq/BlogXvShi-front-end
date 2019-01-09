@@ -1,31 +1,15 @@
 <template>
   <div  >
-     <el-container class="container">
-      <el-header>
-        <el-row>
-          <!-- <el-col :span="2">
-            <img src="../assets/img/logotitle.png" style="width:100%"> 
-          </el-col> -->
-          <el-col :span="24">
-            <el-menu
-              :default-active="activeIndex"
-              class="el-menu-demo"
-              mode="horizontal"
-              text-color="white"
-              active-text-color="#4ebee3"
-              router
-            ><el-menu-item index="/welcome" ><label>旭氏美术馆</label> </el-menu-item>
-              <el-menu-item index="/welcome"><label>Welcome</label></el-menu-item>
-              <el-menu-item index="/home"><label>Home</label></el-menu-item>
-              <el-menu-item index="/album"><label>Video</label></el-menu-item>
-              <el-menu-item index="/editmarkdown"><label>Editblog</label></el-menu-item>
-            </el-menu>
-          </el-col>
-        </el-row>
-      </el-header>
+
+    
+     <el-container  >
+   
+        <el-header>
+          <my-header/>
+        </el-header>
       <el-main>
           <section style="width:100%">
-                  <el-card class="vidoemain">
+                
                     <!-- <video src="../assets/video/movieclip.mp4" controls="controls"></video> -->
                     <el-row>
                       <el-col :span="7">&nbsp;</el-col>
@@ -67,14 +51,15 @@
                         <span >one of my Vlog.</span>
                       </el-card>
                     </el-row>
-                  </el-card>
+                   
           </section>
       </el-main>
     </el-container>
   </div>
 </template>
 <script>
-  import { videoPlayer } from 'vue-video-player'
+  import { videoPlayer } from 'vue-video-player';
+  import myHeader from '@/components/common/header';
 export default {
     data(){
             return{
@@ -129,19 +114,27 @@ export default {
     }
                 }
     },components: {
-          videoPlayer
+          videoPlayer,
+          myHeader
     }
 };
 </script>
 <style  lang="scss"  scoped>
-.el-main{
+body{
+  padding: 0px;
+  margin: 0px;
+  background-color: black;
 }
-.vidoemain{
-   height: 100%;
-  //  background-color: black;
-   background: url(../assets/img/headerbk.jpg) no-repeat;
- background-size: cover;
- }
+.el-main{
+  background-color: black;
+}
+// .vidoemain{
+//   width: 100%;
+//    height: 100%;
+//   //  background-color: black;
+// //    background: url(../assets/img/headerbk.jpg) no-repeat;
+// //  background-size: cover;
+//  }
  .videocard{
    height: 470px;
    width: 800px;

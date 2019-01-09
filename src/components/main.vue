@@ -2,27 +2,11 @@
   <div>
     <el-container>
       <el-header>
-        <el-row>
-          <!-- <el-col :span="2">
-            <img src="../assets/img/logotitle.png" style="width:100%"> 
-          </el-col> -->
-          <!-- :default-active="activeIndex"  -->
-          <el-col :span="24">
-            <el-menu
-              class="el-menu-demo"
-              mode="horizontal"
-              text-color="white"
-              active-text-color="#4ebee3"
-              router
-            ><el-menu-item index="/welcome" ><label>旭氏美术馆</label> </el-menu-item>
-              <el-menu-item index="/welcome"><label>Welcome</label></el-menu-item>
-              <el-menu-item index="/home"><label>Home</label></el-menu-item>
-              <el-menu-item index="/album"><label>Video</label></el-menu-item>
-              <el-menu-item index="/editmarkdown"><label>Editblog</label></el-menu-item>
-            </el-menu>
-          </el-col>
-        </el-row>
+        <my-header/>
       </el-header>
+
+      
+
       <el-main>
           <el-card class="enjoycard"  > 
                   <label style="color:white">🌟Welcome to Enjoy my art pieces,You can be an artist, too.</label> 
@@ -62,52 +46,7 @@
                </p>
           </el-card>
         </section>
-        <!-- <section>
-          <el-row style="height:500px">
-            <el-col :span="5">
-              <el-card class="asidecard">
-                <el-card class="asidegif">
-                  <img src="../assets/img/blog.gif" style="width:100%;height:450px">
-                </el-card>
-                <el-card class="asidecardnews">
-                  <marquee behavior="scroll" direction="up" scrollamount="3" loop="2">
-                    <table class="newstable">
-                      <tr>
-                        <th>2018.12.1</th>&nbsp;
-                        <td>12新作《雪地里的糖》</td>
-                      </tr>
-                      <tr>
-                        <th>2018.11.1</th>&nbsp;
-                        <td>11新作《女孩》</td>
-                      </tr>
-                      <tr>
-                        <th>2018.12.1</th>&nbsp;
-                        <td>12新作《雪地里的糖》</td>
-                      </tr>
-                      <tr>
-                        <th>2018.11.1</th>&nbsp;
-                        <td>11新作《女孩》</td>
-                      </tr>
-                      <tr>
-                        <th>2018.12.1</th>&nbsp;
-                        <td>12新作《雪地里的糖》</td>
-                      </tr>
-                      <tr>
-                        <th>2018.11.1</th>&nbsp;
-                        <td>11新作《女孩》</td>
-                      </tr>
-                    </table>
-                  </marquee>
-                </el-card>
-              </el-card>
-            </el-col>
-            <el-col :span="19">
-              <div>
-                <router-view></router-view>
-              </div>
-            </el-col>
-          </el-row>
-        </section> -->
+      
         <el-row>
           <el-card class="footercard">
             <span>版权归属：旭氏美术馆</span>
@@ -118,11 +57,15 @@
   </div>
 </template>
 <script>
+import myHeader from '@/components/common/header'
 export default {
   data() {
     return {
       // activeIndex: "/home"
     };
+  },
+  components:{
+    myHeader
   }
 };
 </script>
@@ -138,12 +81,7 @@ body {
   height: 100%;
   position: fixed;
 }
-.el-header {
-  width: 100%;
-  height: 200px;
-  background-color: #191b1d;
-  box-shadow: #191b1d 50px;
-}
+
 .el-main {
   /* background: -webkit-linear-gradient(left, #1c5da0, #c3e0ff);
   background: -o-linear-gradient(right, #1c5da0, #c3e0ff);
@@ -166,17 +104,7 @@ body {
    border-radius:20px;
    background-color: #ffffff00;
 } */
-.el-menu {
-  left: 0;
-  /* background-color: #191b1d; */
-   background: url(../assets/img/headerbk.jpg) no-repeat;
- background-size: cover;
-  width: 100%;
-}
-.el-menu-item {
-  font-size: 22px;
-  font-family: -webkit-pictograph;
-}
+
 .asidecard {
   height: 700px;
   background-color: #ffffff00;
