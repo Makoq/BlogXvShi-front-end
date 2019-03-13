@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-     123
-     <router-view/>
+      <input type="text" v-model="data"/>
+      <p>{{data}}</p>
+     <router-view :myDatas="data"></router-view>
   </div>
 </template>
 <script>
@@ -9,6 +10,7 @@ export default {
  
   data () {
     return {
+      data:'hello'
     }
     
   },

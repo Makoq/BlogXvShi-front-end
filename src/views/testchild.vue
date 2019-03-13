@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-     test child
+    ///
+     {{myDatas}}
   </div>
 </template>
 <script>
 export default {
-  name: 'app',
-  data () {
+   props:{
+     myDatas:String
+   },
+  data() {
     return {
     }
   }

@@ -23,7 +23,7 @@ import BaiduMap from 'vue-baidu-map'
 require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 
-const BMap=require('BMap')
+ 
 
 
 Vue.use(ElementUI);
