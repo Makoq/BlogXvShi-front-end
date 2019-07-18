@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: {
+  entry: {//入口entry
     app:'./src/main.js',
     
   },
@@ -10,16 +10,16 @@ module.exports = {
     "BMap":"BMap",
     "BMap_Symbol_SHAPE_POINT":"BMap_Symbol_SHAPE_POINT"
   },
-  output: {
+  output: {//出口output
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
   
-  module: {
+  module: {//loader对webpack不能识别的非JavaScript类型，在打包前，进行转换
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/,//告诉webpack，当遇到require/import解析文件为css类型时，在打包之前，使用'vue-style-loader'和'css-loader'先转换一下
         use: [
           'vue-style-loader',
           'css-loader'
